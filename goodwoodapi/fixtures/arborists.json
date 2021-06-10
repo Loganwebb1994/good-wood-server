@@ -1,0 +1,10 @@
+[
+  {
+  "model": "goodwoodapi.goodwooduser",
+  "pk": 2,
+  "fields": {
+      "user_id": 2,
+      "phone_number": "251555555"
+  }
+  }
+]
