@@ -1,0 +1,13 @@
+[
+  {
+  "model": "goodwoodapi.drop",
+  "pk": 1,
+  "fields": {
+      "wood_type": "oak",
+      "cut_date": "2020-08-28",
+      "arborist_id": 2,
+      "woodworker_id": null,
+      "availability": true
+  }
+  }
+]
