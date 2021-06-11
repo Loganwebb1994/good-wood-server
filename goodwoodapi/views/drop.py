@@ -1,8 +1,9 @@
 from django.http import HttpResponseServerError
+from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from goodwoodapi.models import Drop
+from goodwoodapi.models import Drop, GoodWoodUser
 
 class DropView(ViewSet):
     def create(self, request):
@@ -10,7 +11,7 @@ class DropView(ViewSet):
         drop = Drop()
         drop.wood_type = request.data["wood_type"]
         drop.cut_date = request.data["cut_date"]
-        drop.arborist_id = request.data["arborist_id"]
+        drop.arborist = GoodWoodUser.objects.get(pk=request.data["arborist"])
         drop.woodworker_id = request.data["woodworker_id"]
         drop.availability = request.data["availability"]
 
@@ -43,9 +44,10 @@ class DropView(ViewSet):
         drop = Drop.objects.get(pk=pk)
         drop.wood_type = request.data["wood_type"]
         drop.cut_date = request.data["cut_date"]
-        drop.arborist = request.data["arborist"]
-        drop.woodworker_id = request.data["woodworker_id"]
-        drop.availability = request.data["availability"]
+        drop.arborist = GoodWoodUser.objects.get(pk=request.data["arborist"])
+        if request.data["woodworker_id"]:
+            drop.woodworker_id = request.data["woodworker_id"]
+            drop.availability = request.data["availability"]
         drop.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
