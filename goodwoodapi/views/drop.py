@@ -43,7 +43,7 @@ class DropView(ViewSet):
         drop = Drop.objects.get(pk=pk)
         drop.wood_type = request.data["wood_type"]
         drop.cut_date = request.data["cut_date"]
-        drop.arborist_id = request.data["arborist_id"]
+        drop.arborist = request.data["arborist"]
         drop.woodworker_id = request.data["woodworker_id"]
         drop.availability = request.data["availability"]
         drop.save()
@@ -69,4 +69,5 @@ class DropSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Drop
-        fields = ('id', 'wood_type','cut_date','arborist_id','woodworker_id','availability')
+        fields = ('id', 'wood_type','cut_date','arborist','woodworker_id','availability')
+        depth = 2

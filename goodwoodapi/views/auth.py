@@ -52,8 +52,7 @@ def register_user(request):
 
 
     goodwooduser = GoodWoodUser.objects.create(
-        bio=req_body['bio'],
-        profile_image_url=req_body['profile_image_url'],
+        phone_number=req_body['phone_number'],
         created_on=datetime.now(),
         active=True,
         user=new_user
