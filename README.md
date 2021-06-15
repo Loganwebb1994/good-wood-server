@@ -1,51 +1,31 @@
 # good-wood-server
 Back End Capstone
 
-## Installations
+## To Run Locally
 
-1. Python on Windows Subsystem for Linux
+Clone down the directory
+``` git clone git@github.com:Loganwebb1994/good-wood-server.git```
 
-    ```sudo apt update ```
-    ```sudo apt install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl python3 python3-pip```
 
-1. Homebrew
-    ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
+Run the following commands to install pipenv and create a virtual environment.
 
-1. Python on Mac
-    ```xcode-select --install```
-
-1. Pyenv and Python on Mac
-    ```brew install pyenv```
-    ```pyenv install 3.9.1```
-    ```pyenv global 3.9.1``` 
-
-1. Pipenv 3rd Party Tool
-    ```pip3 install --user pipenv```
-
-    > If you get command not found: pipenv when trying to run pipenv:
-    > 
-    > * Mac and Linux
-    >     * Open ~/.zshrc and add:
-    >       ```export PIPENV_DIR="$HOME/.local"``` 
-    >       ```export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"```
-    >
-    > * Windows
-    >   * First run ```python -m site --user-site```
-    >   * Copy what that returns, replacing ```site-packages``` with ```Scripts```
-    >   * In the control panel add what was copied to the path
-
-1. Virtual Environment
     ```pip3 install --user pipx```
-    ```pipx install pipenv```
-
-1. Start Virtual Project
+    ```pipx install pipenv ```
     ```pipenv shell```
 
-1. Third-Party Packages
-    ```pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django```
 
-1. Migrate data
-    ```./seed.sh```
+Next, install these third-party packages
 
-1. Start the Server
-    ```python manage.py runserver```
+```pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django```
+
+Then start the server
+
+```python3 manage.py runserver```
+
+URL
+
+https://good-wood-server.herokuapp.com/
+
+Description
+
+Api for backend capstone
