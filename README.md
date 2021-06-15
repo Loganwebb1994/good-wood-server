@@ -36,4 +36,4 @@ python manage.py runserver
 ```
 
 ## ERD
-![ERD](./GoodWoodERD.JPG)
+https://dbdiagram.io/d/60abbe05b29a09603d1648ba
