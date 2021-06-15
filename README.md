@@ -36,4 +36,4 @@ python manage.py runserver
 ```
 
 ## ERD
-![](GoodWoodERD.jpg)
+![ERD](./GoodWoodERD.JPG)
