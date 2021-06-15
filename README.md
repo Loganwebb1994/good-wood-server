@@ -1,39 +1,51 @@
-# Good-Wood-Server
+# good-wood-server
+Back End Capstone
 
-## Prerequisites
+## Installations
 
-### Mac OS
+1. Python on Windows Subsystem for Linux
 
-```sh
-brew install libtiff libjpeg webp little-cms2
-```
+    ```sudo apt update ```
+    ```sudo apt install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl python3 python3-pip```
 
-### Linux (WSL)
+1. Homebrew
+    ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
 
-```sh
-sudo apt-get install libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev \
-    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk \
-    libharfbuzz-dev libfribidi-dev libxcb1-dev
-```
+1. Python on Mac
+    ```xcode-select --install```
 
-### Install apidoc
+1. Pyenv and Python on Mac
+    ```brew install pyenv```
+    ```pyenv install 3.9.1```
+    ```pyenv global 3.9.1``` 
 
-```sh
-npm install apidoc -g
-```
+1. Pipenv 3rd Party Tool
+    ```pip3 install --user pipenv```
 
-## Setup
+    > If you get command not found: pipenv when trying to run pipenv:
+    > 
+    > * Mac and Linux
+    >     * Open ~/.zshrc and add:
+    >       ```export PIPENV_DIR="$HOME/.local"``` 
+    >       ```export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"```
+    >
+    > * Windows
+    >   * First run ```python -m site --user-site```
+    >   * Copy what that returns, replacing ```site-packages``` with ```Scripts```
+    >   * In the control panel add what was copied to the path
 
-1. Clone this repository and change to the directory in the terminal.
-1. Run `pipenv shell`
-1. Run `pipenv install`
-1. Type this exact thing into the terminal to run the migrations and seed the database: `./seed_data.sh`
+1. Virtual Environment
+    ```pip3 install --user pipx```
+    ```pipx install pipenv```
 
-Now that your database is set up all you have to do is run the command:
+1. Start Virtual Project
+    ```pipenv shell```
 
-```sh
-python manage.py runserver
-```
+1. Third-Party Packages
+    ```pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django```
 
-## ERD
-https://dbdiagram.io/d/60abbe05b29a09603d1648ba
+1. Migrate data
+    ```./seed.sh```
+
+1. Start the Server
+    ```python manage.py runserver```
