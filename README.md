@@ -16,7 +16,15 @@ Run the following commands to install pipenv and create a virtual environment.
 
 Next, install these third-party packages
 
-```pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django```
+```pipenv install```
+
+Load Fixtures
+
+```python3 manage.py makemigrations```
+```python3 manage.py migrate```
+```python3 manage.py loaddata arborists```
+```python3 manage.py loaddata woodworkers```
+```python3 manage.py loaddata drops```
 
 Then start the server
 
