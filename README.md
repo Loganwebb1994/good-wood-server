@@ -20,7 +20,6 @@ Next, install these third-party packages
 
 Load Fixtures
 
-```python3 manage.py makemigrations```
 ```python3 manage.py migrate```
 ```python3 manage.py loaddata arborists```
 ```python3 manage.py loaddata woodworkers```
